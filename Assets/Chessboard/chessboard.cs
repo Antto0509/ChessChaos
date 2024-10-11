@@ -7,6 +7,8 @@ namespace Chessboard
         void Start()
         {
             float squareSize = 1.0f; // Size of each square
+            char[] columns = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
+            float boardOffset = 3.5f * squareSize; // Offset to center the board
 
             for (int x = 0; x < 8; x++)
             {
@@ -14,8 +16,8 @@ namespace Chessboard
                 {
                     // Create a new square
                     GameObject square = GameObject.CreatePrimitive(PrimitiveType.Quad);
-                    square.name = $"Square_{x}_{y}";
-                    square.transform.position = new Vector3(x * squareSize, y * squareSize, 0);
+                    square.name = $"{columns[x]}{y + 1}";
+                    square.transform.position = new Vector3(x * squareSize - boardOffset, y * squareSize - boardOffset, 0);
 
                     // Assign the color based on the position
                     Renderer renderer = square.GetComponent<Renderer>();
@@ -31,7 +33,7 @@ namespace Chessboard
             }
 
             // Position the camera to view the chessboard
-            Camera.main.transform.position = new Vector3(4 * squareSize, 4 * squareSize, -10);
+            Camera.main.transform.position = new Vector3(0, 0, -10);
             Camera.main.orthographic = true;
             Camera.main.orthographicSize = 4.5f;
         }
