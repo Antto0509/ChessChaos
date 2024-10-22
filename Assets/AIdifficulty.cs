@@ -72,6 +72,10 @@ public class AIdifficulty : MonoBehaviour
         {
             path = Application.dataPath + "/Stockfish/macOS/stockfish-macos-m1-apple-silicon";
         }
+        else if (Application.platform == RuntimePlatform.LinuxPlayer || Application.platform == RuntimePlatform.LinuxEditor)
+        {
+            path = Application.dataPath + "/Stockfish/Linux/stockfish-ubuntu-x86-64-sse41-popcnt";
+        }
 
         return path;
     }
