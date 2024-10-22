@@ -30,23 +30,28 @@ public class jeu : MonoBehaviour
         Sprite whitePawnSprite = AssetDatabase.LoadAssetAtPath<Sprite>(whitePawnPath);
         Sprite blackPawnSprite = AssetDatabase.LoadAssetAtPath<Sprite>(blackPawnPath);
 
+        // X positions for pawns
+        float[] pawnXPositions = { -3.1f, -2.2f, -1.31f, -0.43f, 0.45f, 1.32f, 2.19f, 3.09f };
+
+        // Place white pawns on the second row with specified X positions and Y = -2.2
         for (int i = 0; i < 8; i++)
         {
             GameObject whitePion = new GameObject("WhitePawn" + i);
             SpriteRenderer whiteRenderer = whitePion.AddComponent<SpriteRenderer>();
             whiteRenderer.sprite = whitePawnSprite;
 
-            whitePion.transform.position = new Vector3(i - boardOffsetX + tileSize / 2, -1 + tileSize / 2, -0.1f);
+            whitePion.transform.position = new Vector3(pawnXPositions[i], -2.2f, -0.1f);
             whitePion.transform.localScale = new Vector3(4, 4, 1);
         }
 
+        // Place black pawns on the seventh row with specified X positions and adjusted Y
         for (int i = 0; i < 8; i++)
         {
             GameObject blackPion = new GameObject("BlackPawn" + i);
             SpriteRenderer blackRenderer = blackPion.AddComponent<SpriteRenderer>();
             blackRenderer.sprite = blackPawnSprite;
 
-            blackPion.transform.position = new Vector3(i - boardOffsetX + tileSize / 2, 1 + tileSize / 2, -0.1f);
+            blackPion.transform.position = new Vector3(pawnXPositions[i], boardOffsetY - tileSize * 1.5f + 0.2f, -0.1f);
             blackPion.transform.localScale = new Vector3(4, 4, 1);
         }
     }

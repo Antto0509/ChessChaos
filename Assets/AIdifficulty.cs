@@ -9,10 +9,12 @@ public class AIdifficulty : MonoBehaviour
     public void Retour()
     {
         SceneManager.LoadScene(RetourMainMenu);
+        AudioManager.Instance.PlaySound(AudioType.ClickSound, AudioSourceType.Player);
     }
     
     public void StartGame()
     {
         SceneManager.LoadScene(Chessboard);
+        AudioManager.Instance.PlaySound(AudioType.ClickSound, AudioSourceType.Player);
     }
 }
