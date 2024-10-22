@@ -4,43 +4,50 @@ using UnityEditor;
 
 public class jeu : MonoBehaviour
 {
-    public GameObject pionPrefab;
-    public Sprite[] whitePawns;
-    public Sprite[] blackPawns;
+    public string whitePawnPath = "Assets/Chessboard/Assets/Sprites/white_pawn.png";
+    public string blackPawnPath = "Assets/Chessboard/Assets/Sprites/black_pawn.png";
+    public string boardPath = "Assets/Chessboard/Assets/Sprites/board.png";
+
+    private const float tileSize = 1.0f;
+    private const float boardOffsetX = 3.5f;
+    private const float boardOffsetY = 3.5f;
 
     private void Start()
     {
-        // Load the board sprite from the specified path
-        Sprite boardSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Chessboard/Assets/Sprites/board.png");
+        Sprite boardSprite = AssetDatabase.LoadAssetAtPath<Sprite>(boardPath);
 
-        // Load the board sprite and set it as the background
         GameObject board = new GameObject("plateau");
         SpriteRenderer boardRenderer = board.AddComponent<SpriteRenderer>();
         boardRenderer.sprite = boardSprite;
-        board.transform.position = new Vector3(0, 0, 1); // Ensure the board is behind the pawns
+        board.transform.position = new Vector3(0, 0, 1);
 
-        // Set the scale to 4
         board.transform.localScale = new Vector3(4, 4, 1);
 
-        // Adjust the camera to view the entire board
         Camera.main.transform.position = new Vector3(0, 0, -10);
         Camera.main.orthographic = true;
         Camera.main.orthographicSize = 4.5f;
 
-        // Place white pawns
-        for (int i = 0; i < whitePawns.Length; i++)
+        Sprite whitePawnSprite = AssetDatabase.LoadAssetAtPath<Sprite>(whitePawnPath);
+        Sprite blackPawnSprite = AssetDatabase.LoadAssetAtPath<Sprite>(blackPawnPath);
+
+        for (int i = 0; i < 8; i++)
         {
-            GameObject whitePion = Instantiate(pionPrefab, new Vector3(i - 3.5f, -3.5f, -1), Quaternion.identity);
-            SpriteRenderer whiteRenderer = whitePion.GetComponent<SpriteRenderer>();
-            whiteRenderer.sprite = whitePawns[i];
+            GameObject whitePion = new GameObject("WhitePawn" + i);
+            SpriteRenderer whiteRenderer = whitePion.AddComponent<SpriteRenderer>();
+            whiteRenderer.sprite = whitePawnSprite;
+
+            whitePion.transform.position = new Vector3(i - boardOffsetX, -1, -0.1f);
+            whitePion.transform.localScale = new Vector3(4, 4, 1);
         }
 
-        // Place black pawns
-        for (int i = 0; i < blackPawns.Length; i++)
+        for (int i = 0; i < 8; i++)
         {
-            GameObject blackPion = Instantiate(pionPrefab, new Vector3(i - 3.5f, 3.5f, -1), Quaternion.identity);
-            SpriteRenderer blackRenderer = blackPion.GetComponent<SpriteRenderer>();
-            blackRenderer.sprite = blackPawns[i];
+            GameObject blackPion = new GameObject("BlackPawn" + i);
+            SpriteRenderer blackRenderer = blackPion.AddComponent<SpriteRenderer>();
+            blackRenderer.sprite = blackPawnSprite;
+
+            blackPion.transform.position = new Vector3(i - boardOffsetX, 1, -0.1f);
+            blackPion.transform.localScale = new Vector3(4, 4, 1);
         }
     }
 }
