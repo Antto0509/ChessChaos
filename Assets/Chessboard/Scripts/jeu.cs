@@ -36,7 +36,7 @@ public class jeu : MonoBehaviour
             SpriteRenderer whiteRenderer = whitePion.AddComponent<SpriteRenderer>();
             whiteRenderer.sprite = whitePawnSprite;
 
-            whitePion.transform.position = new Vector3(i - boardOffsetX, -1, -0.1f);
+            whitePion.transform.position = new Vector3(i - boardOffsetX + tileSize / 2, -1 + tileSize / 2, -0.1f);
             whitePion.transform.localScale = new Vector3(4, 4, 1);
         }
 
@@ -46,7 +46,7 @@ public class jeu : MonoBehaviour
             SpriteRenderer blackRenderer = blackPion.AddComponent<SpriteRenderer>();
             blackRenderer.sprite = blackPawnSprite;
 
-            blackPion.transform.position = new Vector3(i - boardOffsetX, 1, -0.1f);
+            blackPion.transform.position = new Vector3(i - boardOffsetX + tileSize / 2, 1 + tileSize / 2, -0.1f);
             blackPion.transform.localScale = new Vector3(4, 4, 1);
         }
     }
