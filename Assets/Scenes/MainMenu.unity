@@ -1769,6 +1769,8 @@ MonoBehaviour:
   audioData:
   - clip: {fileID: 8300000, guid: d6a0a18a89db5364589fef45e37cd429, type: 3}
     type: 0
+  - clip: {fileID: 8300000, guid: 39bf7797c698a884f87349d4a0c74ccc, type: 3}
+    type: 1
 --- !u!4 &2081833038
 Transform:
   m_ObjectHideFlags: 0
