@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 332704399}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1366712852}
+        m_TargetAssemblyTypeName: AIdifficulty, Assembly-CSharp
+        m_MethodName: Moyen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &332704399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +334,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 636405866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1366712852}
+        m_TargetAssemblyTypeName: AIdifficulty, Assembly-CSharp
+        m_MethodName: Facile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &636405866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1649,6 +1673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RetourMainMenu: MainMenu
   Chessboard: Chessboard
+  Difficulty: 0
 --- !u!1 &1392235886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,7 +1756,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1392235889}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1366712852}
+        m_TargetAssemblyTypeName: AIdifficulty, Assembly-CSharp
+        m_MethodName: Difficile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1392235889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2124,7 +2161,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1960050332}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1366712852}
+        m_TargetAssemblyTypeName: AIdifficulty, Assembly-CSharp
+        m_MethodName: Expert
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1960050332
 MonoBehaviour:
   m_ObjectHideFlags: 0
