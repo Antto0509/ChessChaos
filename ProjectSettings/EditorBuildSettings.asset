@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AIdifficulty.unity
     guid: af701e77b652b3d49951bf93f668fa7e
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: fefa4c99680e39b4ebf11b583937f2d6
+  - enabled: 1
+    path: Assets/Scenes/Chessboard.unity
+    guid: cdbb6d74109b04f0d97f4891629a8dc2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
