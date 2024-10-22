@@ -7,15 +7,18 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(AIdifficulty);
+        AudioManager.Instance.PlaySound(AudioType.ClickSound, AudioSourceType.Player);
     }
 
     public void SettingsButton()
     {
         SceneManager.LoadScene(Settings);
+        AudioManager.Instance.PlaySound(AudioType.ClickSound, AudioSourceType.Player);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        AudioManager.Instance.PlaySound(AudioType.ClickSound, AudioSourceType.Player);
     }
 }
