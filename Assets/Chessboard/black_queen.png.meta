@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c79b5c1822aadb643935096d675e38a9
+guid: d4af6475bc5b71a4990c5d3e8807a009
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6664491871924611896
-    second: BackgroundChess_0
+      213: -2628853326628446179
+    second: black_queen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackgroundChess_0
+      name: black_queen_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 281
+        width: 16
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c49475d3f7f283a0800000000000000
-      internalID: -6664491871924611896
+      spriteID: d1025b3e3df648bd0800000000000000
+      internalID: -2628853326628446179
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      BackgroundChess_0: -6664491871924611896
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
