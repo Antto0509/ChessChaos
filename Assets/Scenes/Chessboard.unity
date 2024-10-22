@@ -285,9 +285,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf02d07e0f234d978019d5f9460d815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pionPrefab: {fileID: 0}
-  whitePawns: []
-  blackPawns: []
+  plateauPath: Assets/Chessboard/Assets/Sprites/board.png
+  pionsBlancsPath: Assets/Chessboard/Assets/Sprites/white_pawn.png
+  tourBlanchePath: Assets/Chessboard/Assets/Sprites/white_rook.png
+  cavalierBlancPath: Assets/Chessboard/Assets/Sprites/white_knight.png
+  fouBlancPath: Assets/Chessboard/Assets/Sprites/white_bishop.png
+  reineBlanchePath: Assets/Chessboard/Assets/Sprites/white_queen.png
+  roiBlancPath: Assets/Chessboard/Assets/Sprites/white_king.png
+  pionsNoirsPath: Assets/Chessboard/Assets/Sprites/black_pawn.png
+  tourNoirePath: Assets/Chessboard/Assets/Sprites/black_rook.png
+  cavalierNoirPath: Assets/Chessboard/Assets/Sprites/black_knight.png
+  fouNoirPath: Assets/Chessboard/Assets/Sprites/black_bishop.png
+  reineNoirePath: Assets/Chessboard/Assets/Sprites/black_queen.png
+  roiNoirPath: Assets/Chessboard/Assets/Sprites/black_king.png
 --- !u!4 &1971391550
 Transform:
   m_ObjectHideFlags: 0
