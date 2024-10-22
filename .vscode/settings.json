@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ChessChaos.sln"
+    "dotnet.defaultSolution": "ChessChaos.sln",
+    "dotnet.preferCSharpExtension": true
 }
