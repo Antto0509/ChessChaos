@@ -1,44 +1,29 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RippleParticleManager : MonoBehaviour
 {
-    public ParticleSystem rippleEffect;  // Le Particle System pour l'effet ripple
-    public Camera mainCamera;            // La caméra principale (Main Camera)
+    public ParticleSystem rippleEffect;   // Le Particle System pour l'effet ripple
+    public Canvas canvas;                 // Le Canvas contenant l'UI
 
-    private void Start()
+    // Méthode publique que vous pouvez appeler à partir de l'Event Trigger
+    public void TriggerRippleEffect(BaseEventData data)
     {
-        if (mainCamera == null)
-        {
-            mainCamera = Camera.main;  // Assigne automatiquement la caméra principale
-        }
+        PointerEventData pointerData = (PointerEventData)data;
 
-        rippleEffect.Stop();  // Assurez-vous que le Particle System est arrêté au début
-    }
+        // Convertir la position du clic en espace monde
+        Vector2 clickPosition;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform, 
+            pointerData.position, 
+            canvas.worldCamera, 
+            out clickPosition
+        );
 
-    private void Update()
-    {
-        // Si un clic gauche de la souris est détecté
-        if (Input.GetMouseButtonDown(0))
-        {
-            TriggerRippleEffect();
-        }
-    }
+        // Positionner le Particle System à l'endroit du clic
+        rippleEffect.transform.position = canvas.transform.TransformPoint(clickPosition);
 
-    void TriggerRippleEffect()
-    {
-        // Obtenir la position du clic en coordonnées écran (Screen Space)
-        Vector3 mousePosition = Input.mousePosition;
-
-        // Définir la profondeur (distance entre la caméra et le point de clic dans l'espace monde)
-        mousePosition.z = mainCamera.nearClipPlane + 1f;  // Un petit ajustement pour placer le ripple juste devant la caméra
-
-        // Convertir la position en coordonnées monde (World Space)
-        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
-
-        // Déplacer le Particle System à la position du clic
-        rippleEffect.transform.position = worldPosition;
-
-        // Activer et jouer le Particle System
+        // Jouer l'effet ripple
         rippleEffect.Play();
     }
 }
