@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pngtree-circle-blue-round-png-image_3496567_0: 2892453942971855701
+      pngtree-circle-blue-round-png-image_3496567_1: -5944022422365099607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
