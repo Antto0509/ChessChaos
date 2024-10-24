@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+
 public class MainMenu : MonoBehaviour
 {
     public string AIdifficulty;
@@ -22,3 +24,6 @@ public class MainMenu : MonoBehaviour
         AudioManager.Instance.PlaySound(AudioType.ClickSound, AudioSourceType.Player);
     }
 }
+
+
+
