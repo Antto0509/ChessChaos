@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AIdifficulty : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class AIdifficulty : MonoBehaviour
     public string RetourMainMenu;
     public string Chessboard;
     public int Difficulty;
+    public GameObject loadingScreen;
+    public Slider slider;
     
     public void Retour()
     {
@@ -89,12 +93,26 @@ public class AIdifficulty : MonoBehaviour
         }
     } */
     
-    public void StartGame()
+    public void StartGame(string sceneIndex)
     {
         // StartStockfish();
         // SetSkillLevel(Difficulty);
-        SceneManager.LoadScene(Chessboard);
+        StartCoroutine(LoadSync(sceneIndex));
         AudioManager.Instance.PlaySound(AudioType.ClickSound, AudioSourceType.Player);
+    }
+    
+    IEnumerator LoadSync(string sceneIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        
+        loadingScreen.SetActive(true);
+        
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            slider.value = progress;
+            yield return null;
+        }
     }
 
     /* void OnApplicationQuit()
